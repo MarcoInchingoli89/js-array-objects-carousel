@@ -47,12 +47,12 @@ for (let i = 0; i < cardImages.length; i++) {
     //Li salvo in una variabile
     const cardImage = cardImages[i];
     console.log(cardImage);
-    const slidesMarkUp = `< class="slides"> <img width="500" src="./assets/${cardImage.image}" alt=""> + ${cardImage.title} + ${cardImage.text}"</div>`;
+    //Ad ogni iterazione inserisco le proprietà degli oggetti nel div "slides"
+    const slidesMarkUp = `<class="slides"> <img width="500" src="./assets/${cardImage.image}" alt=""> ${cardImage.title} ${cardImage.text}"</div>`;
     console.log(slidesMarkUp);
+    //Stampo gli oggetti a schermo
     containerEl.insertAdjacentHTML('beforeend', slidesMarkUp);
 }
-
-//Ad ogni iterazione inserisco l'oggetto nel div "slides"
 
 
 
