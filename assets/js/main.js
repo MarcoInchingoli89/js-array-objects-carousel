@@ -9,7 +9,7 @@ Aggiungere il ciclo infinito del carosello. Ovvero se la miniatura attiva è la 
 
 //Creo un array di oggetti letterali
 
-const images = [
+const cardImages = [
     {
         image: 'img/01.webp',
         title: 'Marvel\'s Spiderman Miles Morales',
@@ -32,16 +32,27 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
-console.log(images)
+console.log(cardImages)
 
 //Milestone 1:
 /* Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
 Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo. */
 
 //Selezioniamo il div dove vogliamo inserire le immagini
-const slidesEl = document.querySelector('.slides');
+const containerEl = document.querySelector('.container');
+/* console.log(containerEl); */
 
-//Crea un ciclo for con le immagini
+//Devo ciclare nell'array di oggetti per prenderli singolarmente
+for (let i = 0; i < cardImages.length; i++) {
+    //Li salvo in una variabile
+    const cardImage = cardImages[i];
+    console.log(cardImage);
+    const slidesMarkUp = `< class="slides"> <img width="500" src="./assets/${cardImage.image}" alt=""> + ${cardImage.title} + ${cardImage.text}"</div>`;
+    console.log(slidesMarkUp);
+    containerEl.insertAdjacentHTML('beforeend', slidesMarkUp);
+}
+
+//Ad ogni iterazione inserisco l'oggetto nel div "slides"
 
 
 
@@ -49,16 +60,16 @@ const slidesEl = document.querySelector('.slides');
 
 
 /* for (let i = 0; i < images.length; i++) { */
-    /* const imagesEl = images[i]; */
-    //Vado a selezionare il mio markup
-    /* const slidesMarkUp = `<img width="500" src="${imagesEl}" alt="">` */
-    //Stampo su console il markup
-    /* console.log(slidesMarkUp); */
-    //Stampo su pagina il mio markup
-    /* slidesEl.insertAdjacentHTML('beforeend', slidesMarkUp); */
-    //Stampo su console tutte le immagini
-    /* console.log(imagesEl); */
-    
+/* const imagesEl = images[i]; */
+//Vado a selezionare il mio markup
+/* const slidesMarkUp = `<img width="500" src="${imagesEl}" alt="">` */
+//Stampo su console il markup
+/* console.log(slidesMarkUp); */
+//Stampo su pagina il mio markup
+/* slidesEl.insertAdjacentHTML('beforeend', slidesMarkUp); */
+//Stampo su console tutte le immagini
+/* console.log(imagesEl); */
+
 /* } */
 
 
@@ -74,7 +85,7 @@ const slidesEl = document.querySelector('.slides');
 
 
 // Selezioniamo la prima immagine di quelle inserite in pagina
-const imgActive = document.images[0];
+/* const imgActive = document.images[0]; */
 //Applica la classe "active" alla prima immagine
-imgActive.className = "active";
-console.log(imgActive)
+/* imgActive.className = "active";
+console.log(imgActive) */
