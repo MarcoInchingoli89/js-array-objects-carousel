@@ -48,15 +48,36 @@ for (let i = 0; i < cardImages.length; i++) {
     const cardImage = cardImages[i];
     console.log(cardImage);
     //Ad ogni iterazione inserisco le proprietà degli oggetti nel div "slides"
-    const slidesMarkUp = `<class="slides"> <img width="500" src="./assets/${cardImage.image}" alt=""> ${cardImage.title} ${cardImage.text}"</div>`;
+    const slidesMarkUp = `
+        <div class="slides">
+            <img width="500" src="./assets/${cardImage.image}" alt="">
+            <h2 class="text-center py-3">${cardImage.title}</h2>
+            <p>${cardImage.text}</p>
+        </div>`;
     console.log(slidesMarkUp);
     //Stampo gli oggetti a schermo
     containerEl.insertAdjacentHTML('beforeend', slidesMarkUp);
 }
 
+function activeImage() {
+    const firstImage = document.querySelector(".slides");
+    //element.classList.add("mystyle");
+    //console.log(firstImage)
+    firstImage.classList.add("active");
+
+    return firstImage
+}
 
 
+const activeSlide = activeImage();
+console.log(activeSlide)
 
+
+/* // Selezioniamo la prima immagine di quelle inserite in pagina
+const imgActive = document.images[0];
+//Applica la classe "active" alla prima immagine
+imgActive.className = "active";
+console.log(imgActive) */
 
 
 /* for (let i = 0; i < images.length; i++) { */
